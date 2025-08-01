@@ -614,7 +614,7 @@
                     async runPhpStan() {
                         this.running = true;
 
-                        const response = await fetch('/phpstan-run', {
+                        const response = await fetch('/phpstan-report/run', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
@@ -639,7 +639,7 @@
                         this.message = '';
 
                         try {
-                            const fetchLvlResponse = await fetch('/phpstan/level', {
+                            const fetchLvlResponse = await fetch('/phpstan-report/change-level', {
                                 method: 'POST',
                                 headers: {
                                     'Content-Type': 'application/json',
