@@ -30,7 +30,7 @@ PHPStan Report is a Laravel package that provides an elegant web interface for v
 Install the package via Composer:
 
 ```bash
-bash composer require gboquizo/phpstan-report
+composer require gboquizo/phpstan-report
 ```
 
 ## Quick Setup
@@ -123,6 +123,8 @@ We welcome contributions! Please feel free to:
 
 ## License
 This package is open-source software licensed under the [MIT License](LICENSE.md).
+
+## Dependencies
 
 ### PHP dependencies 📦
 - Illuminate Console [![Latest Stable Version](https://img.shields.io/badge/stable-v12.21.0-blue)](https://packagist.org/packages/illuminate/console)
