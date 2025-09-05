@@ -1,8 +1,9 @@
 # PHPStan Report
 
-[![Latest Stable Version](https://poser.pugx.org/gboquizosanchez/phpstan-report/version.svg)](https://packagist.org/packages/gboquizosanchez/phpstan-report)
-[![License](https://poser.pugx.org/gboquizosanchez/phpstan-report/license.svg)](https://packagist.org/packages/gboquizosanchez/phpstan-report)
-[![Downloads](https://poser.pugx.org/gboquizosanchez/phpstan-report/d/total.svg)](https://packagist.org/packages/gboquizosanchez/phpstan-report)
+[![Latest Version](https://img.shields.io/packagist/v/gboquizosanchez/phpstan-report.svg)](https://packagist.org/packages/gboquizosanchez/phpstan-report)
+[![Software License](https://img.shields.io/badge/license-MIT-red.svg)](LICENSE.md)
+[![Total Downloads](https://img.shields.io/packagist/dt/gboquizosanchez/phpstan-report.svg)](https://packagist.org/packages/gboquizosanchez/phpstan-report)
+
 
 ## Overview
 
