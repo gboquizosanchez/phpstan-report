@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Gboquizo\PhpstanReport\Http;
+namespace Boquizo\PhpstanReport\Http;
 
-use Gboquizo\PhpstanReport\Actions\ComposerPhpstanReportAction;
+use Boquizo\PhpstanReport\Actions\ComposerPhpstanReportAction;
 use Illuminate\Http\JsonResponse;
 
 readonly class ProcessCommandController

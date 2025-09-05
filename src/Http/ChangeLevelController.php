@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Gboquizo\PhpstanReport\Http;
+namespace Boquizo\PhpstanReport\Http;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;

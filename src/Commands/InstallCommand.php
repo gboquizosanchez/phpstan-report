@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Gboquizo\PhpstanReport\Commands;
+namespace Boquizo\PhpstanReport\Commands;
 
-use Gboquizo\PhpstanReport\Actions\ComposerPhpstanReportAction;
+use Boquizo\PhpstanReport\Actions\ComposerPhpstanReportAction;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\File;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Gboquizo\PhpstanReport\Services;
+namespace Boquizo\PhpstanReport\Services;
 
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\File;

@@ -18,18 +18,17 @@
     "phpstan/phpstan": "^1.0|^2.0"
   },
   "require-dev": {
-    "laravel/pint": "^1.24",
-    "hermes/dependencies": "^1.2"
+    "laravel/pint": "^1.24"
   },
   "autoload": {
     "psr-4": {
-      "Gboquizo\\PhpstanReport\\": "src/"
+      "Bboquizo\\PhpstanReport\\": "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Gboquizo\\PhpstanReport\\PhpstanReportProvider"
+        "Boquizo\\PhpstanReport\\PhpstanReportProvider"
       ]
     }
   }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Gboquizo\PhpstanReport\Http;
+namespace Boquizo\PhpstanReport\Http;
 
 use Exception;
 use Illuminate\Contracts\View\View;

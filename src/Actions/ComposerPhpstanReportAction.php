@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Gboquizo\PhpstanReport\Actions;
+namespace Boquizo\PhpstanReport\Actions;
 
-use Gboquizo\PhpstanReport\Services\CommandService;
+use Boquizo\PhpstanReport\Services\CommandService;
 
 final readonly class ComposerPhpstanReportAction
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Gboquizo\PhpstanReport;
+namespace Boquizo\PhpstanReport;
 
-use Gboquizo\PhpstanReport\Commands\InstallCommand;
+use Boquizo\PhpstanReport\Commands\InstallCommand;
 use Illuminate\Support\ServiceProvider;
 
 final class PhpstanReportProvider extends ServiceProvider

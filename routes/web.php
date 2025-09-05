@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use Gboquizo\PhpstanReport\Http\ChangeLevelController;
-use Gboquizo\PhpstanReport\Http\IndexReportController;
-use Gboquizo\PhpstanReport\Http\ProcessCommandController;
+use Boquizo\PhpstanReport\Http\ChangeLevelController;
+use Boquizo\PhpstanReport\Http\IndexReportController;
+use Boquizo\PhpstanReport\Http\ProcessCommandController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('web')
