@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace Boquizo\PhpstanReport\Services;
 
+use Exception;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Symfony\Component\Process\Process;
 
 class CommandService
@@ -20,9 +22,18 @@ class CommandService
     public function process(): Process
     {
         $process = new Process(['composer', 'phpstan-report']);
-
         $process->setWorkingDirectory(App::basePath());
-        $process->run();
+        $process->setTimeout(null);
+
+        try {
+            $process->mustRun(function ($type, $buffer) {
+                if (Process::ERR === $type) {
+                    Log::error('Error in PHPStan: ' . $buffer);
+                }
+            });
+        } catch (Exception $exception) {
+            Log::error('Error executing PHPStan: ' . $exception->getMessage());
+        }
 
         return $process;
     }

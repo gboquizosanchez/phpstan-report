@@ -32,7 +32,7 @@ class ChangeLevelController
         /** @var string $content */
         $content = File::get($path);
 
-        $newContent = preg_replace('/level:\s*\d+/', "level: $level", $content);
+        $newContent = preg_replace('/level:\s*(\d|\w)+/', "level: $level", $content);
         if ($newContent === null) {
             return new JsonResponse([
                 'error' => 'Failed to parse phpstan.neon',
