@@ -63,7 +63,7 @@ You can customize this configuration according to your project needs.
 
 ## Screenshots 💄
 
-![Panel](https://raw.githubusercontent.com/gboquizosanchez/phpstan-report/refs/heads/main/arts/panel.jpg)
+![Panel](https://raw.githubusercontent.com/gboquizosanchez/phpstan-report/refs/heads/1.x/arts/panel.jpg)
 
 ## Usage
 ### Accessing the Web Interface
