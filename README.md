@@ -1,55 +1,76 @@
-# PHPStan Report
+<div align="center">
 
-[![Latest Version](https://img.shields.io/packagist/v/gboquizosanchez/phpstan-report.svg)](https://packagist.org/packages/gboquizosanchez/phpstan-report)
-[![Software License](https://img.shields.io/badge/license-MIT-red.svg)](LICENSE.md)
+<img src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f4ca.svg" width="100" alt="PHPStan Report">
+
+# `gboquizosanchez/phpstan-report`
+
+**A beautiful web interface for PHPStan results in Laravel**
+
+[![Latest Stable Version](https://img.shields.io/packagist/v/gboquizosanchez/phpstan-report.svg)](https://packagist.org/packages/gboquizosanchez/phpstan-report)
 [![Total Downloads](https://img.shields.io/packagist/dt/gboquizosanchez/phpstan-report.svg)](https://packagist.org/packages/gboquizosanchez/phpstan-report)
+[![PHP](https://img.shields.io/badge/PHP-%5E8.3-777BB4?logo=php&logoColor=white)](https://packagist.org/packages/gboquizosanchez/phpstan-report)
+[![Laravel](https://img.shields.io/badge/Laravel-11%20%7C%2012-FF2D20?logo=laravel&logoColor=white)](https://packagist.org/packages/gboquizosanchez/phpstan-report)
+[![License: MIT](https://img.shields.io/badge/License-MIT-22C55E.svg)](LICENSE.md)
 
+---
+
+*Stop squinting at terminal output. Run PHPStan, browse results, fix errors — all from your browser.*
+
+</div>
+
+---
 
 ## Overview
 
 PHPStan Report is a Laravel package that provides an elegant web interface for viewing, analyzing, and managing PHPStan static analysis results. Transform your code quality insights into an interactive, user-friendly dashboard.
 
-## Features ✨
+[![Panel](https://raw.githubusercontent.com/gboquizosanchez/phpstan-report/refs/heads/1.x/arts/panel.jpg)](https://raw.githubusercontent.com/gboquizosanchez/phpstan-report/refs/heads/1.x/arts/panel.jpg)
 
-- **🎯 Dynamic Level Control** - Adjust PHPStan analysis levels (1-10) through an intuitive web interface
-- **⚡ Real-time Analysis** - Execute PHPStan analysis directly from your browser
-- **📊 Beautiful Reports** - View detailed analysis results with clear, organized presentation
-- **🌓 Theme Support** - Switch between dark and light themes with session persistence
-- **📋 Copy Functionality** - One-click copy for error messages and solutions
-- **📱 Responsive Design** - Optimized experience across mobile and desktop devices
-- **🚀 Composer Integration** - Seamless integration with Composer scripts
-- **💾 Auto-save Settings** - Automatically remembers your preferred configuration
+---
+
+## ✨ Features
+
+- 🎯 **Dynamic Level Control** — Adjust PHPStan analysis levels (1–10) from the UI
+- ⚡ **Real-time Analysis** — Run PHPStan directly from your browser
+- 📊 **Beautiful Reports** — Errors grouped by file, expandable inline, with severity indicators
+- 🌓 **Dark / Light theme** — Persisted per session
+- 📋 **One-click copy** — Copy error messages and suggested fixes instantly
+- 📱 **Responsive** — Optimized for mobile and desktop
+- 🚀 **Composer integration** — Seamless integration with Composer scripts
+- 💾 **Auto-save** — Remembers your preferred configuration
+
+---
 
 ## Requirements
 
-- **PHP**: 8.3+
-- **Laravel**: 11.0+ or 12.0+
-- **Composer**: Latest stable version
+- PHP 8.3+
+- Laravel 11.0+ or 12.0+
 
-# Installation
+> [!WARNING]
+> This package is intended for **development environments only**. Do not install it in production.
 
-Install the package via Composer:
+---
+
+## 📦 Installation
 
 ```bash
-composer require gboquizo/phpstan-report
+composer require gboquizosanchez/phpstan-report
 ```
 
-## Quick Setup
-
-Run the installation command to automatically configure PHPStan Report:
+Run the installation command to automatically configure everything:
 
 ```bash
 php artisan install:phpstan-report
 ```
 
-This command performs the following actions:
-1. **Creates `phpstan.neon`** - Generates a configuration file with level 3 analysis (if not exists)
-2. **Publishes assets** - Copies package assets to `public/vendor/phpstan-report`
-3. **Updates `composer.json`** - Adds PHPStan script for easy execution
-4. **Runs initial analysis** - Executes PHPStan analysis and asset discovery
+This command will:
 
-### Generated Configuration
-The installation creates a basic `phpstan.neon` configuration:
+1. **Create `phpstan.neon`** — Generates a base config at level 3 (if not already present)
+2. **Publish assets** — Copies assets to `public/vendor/phpstan-report`
+3. **Update `composer.json`** — Adds a `phpstan-report` Composer script
+4. **Run initial analysis** — Executes PHPStan and discovers your codebase
+
+### Generated `phpstan.neon`
 
 ```neon
 parameters:
@@ -58,91 +79,78 @@ parameters:
         - app
 ```
 
-You can customize this configuration according to your project needs.
+You can customize this file to match your project's needs.
 
+---
 
-## Screenshots 💄
+## 🚀 Usage
 
-![Panel](https://raw.githubusercontent.com/gboquizosanchez/phpstan-report/refs/heads/1.x/arts/panel.jpg)
+Navigate to the dashboard in your browser:
 
-## Usage
-### Accessing the Web Interface
-Navigate to the PHPStan Report dashboard using any of these methods:
-- **Direct URL**: `https://your-application.com/phpstan-report`
-- **Artisan route list**: Use `php artisan route:list --name=phpstan` to verify the route
+```
+https://your-application.com/phpstan-report
+```
 
-### Dashboard Features
-#### 📊 Analysis Dashboard
-- **Real-time statistics** showing total errors, warnings, and analysis status
-- **File-based organization** with expandable error lists
-- **Severity indicators** with color-coded error types
+Or verify the route is registered:
 
-#### ⚙️ Level Management
-- **Interactive slider** to adjust PHPStan analysis levels (1-10)
-- **Instant feedback** showing level descriptions and expected behavior
-- **Automatic re-analysis** when level changes are applied
+```bash
+php artisan route:list --name=phpstan
+```
 
-#### 🚀 Analysis Execution
-- **One-click analysis** button for immediate code scanning
-- **Progress indicators** showing analysis status
-- **Success/error notifications** with detailed feedback
+You can also trigger analysis from the command line:
 
-#### 🎨 User Experience
-- **Theme toggle** between dark and light modes
-- **Persistent preferences** saved across browser sessions
-- **Mobile-optimized** interface for analysis on-the-go
-- **Copy-to-clipboard** functionality for quick error sharing
-
-### Command Line Usage
-You can also run PHPStan analysis through Composer:
-
-``` bash
-# Run analysis (added by installation command)
+```bash
 composer phpstan-report
 ```
 
-### Getting Help
-If you encounter issues:
-1. **Check the logs** - Laravel logs may contain helpful error messages
-2. **Verify requirements** - Ensure PHP and Laravel versions meet minimum requirements
-3. **Clear cache** - Run `php artisan config:clear` and `php artisan cache:clear`
-4. **Open an issue** - [Report bugs or request features](https://github.com/gboquizosanchez/phpstan-report/issues/new)
+### Dashboard features
+
+**Analysis overview** — Real-time stats showing total errors, warnings, and current analysis status.
+
+**Level management** — Interactive slider to adjust PHPStan levels (1–10) with instant feedback and automatic re-analysis on change.
+
+**Error browser** — File-based organization with expandable error lists, color-coded severity, and one-click copy for quick sharing.
+
+**Theme & preferences** — Toggle between dark and light mode; settings persist across sessions.
+
+---
+
+## Troubleshooting
+
+1. **Check the logs** — Laravel logs may contain helpful error messages.
+2. **Verify requirements** — Ensure PHP and Laravel versions meet the minimum requirements.
+3. **Clear cache** — Run `php artisan config:clear` and `php artisan cache:clear`.
+4. **Open an issue** — [Report bugs or request features](https://github.com/gboquizosanchez/phpstan-report/issues/new).
+
+---
 
 ## Contributing
-We welcome contributions! Please feel free to:
-- 🐛 **Report bugs** through GitHub issues
+
+Contributions are welcome!
+
+- 🐛 **Report bugs** via [GitHub Issues](https://github.com/gboquizosanchez/phpstan-report/issues/new)
 - 💡 **Suggest features** or improvements
-- 🔧 **Submit pull requests** with bug fixes or enhancements
+- 🔧 **Submit pull requests** with fixes or enhancements
 - 📖 **Improve documentation** or add examples
 
-## Credits 🧑‍💻
+---
+
+## Credits
 
 - **Author**: [Germán Boquizo Sánchez](mailto:germanboquizosanchez@gmail.com)
-- **Built with**: [PHPStan](https://phpstan.org/) - The powerful PHP static analysis tool
-- **Framework**: [Laravel](https://laravel.com/) - The PHP framework
-- **Contributors**: [View all contributors](../../contributors)
+- **Built with**: [PHPStan](https://phpstan.org/) · [Laravel](https://laravel.com/) · [Alpine.js](https://alpinejs.dev/) · [Tailwind CSS](https://tailwindcss.com/)
+- **Contributors**: [View all contributors](https://github.com/gboquizosanchez/phpstan-report/contributors)
 
-## License
+---
+
+## 📄 License
+
 This package is open-source software licensed under the [MIT License](LICENSE.md).
 
-## Dependencies
+---
 
-### PHP dependencies 📦
-- Illuminate Console [![Latest Stable Version](https://img.shields.io/badge/stable-v12.21.0-blue)](https://packagist.org/packages/illuminate/console)
-- Illuminate Http [![Latest Stable Version](https://img.shields.io/badge/stable-v12.21.0-blue)](https://packagist.org/packages/illuminate/http)
-- Illuminate Support [![Latest Stable Version](https://img.shields.io/badge/stable-v12.21.0-blue)](https://packagist.org/packages/illuminate/support)
-- Illuminate View [![Latest Stable Version](https://img.shields.io/badge/stable-v12.21.0-blue)](https://packagist.org/packages/illuminate/view)
-- Phpstan Phpstan [![Latest Stable Version](https://img.shields.io/badge/stable-2.1.21-blue)](https://packagist.org/packages/phpstan/phpstan)
+<div align="center">
 
-#### Develop dependencies 🔧
-- Hermes Dependencies [![Latest Stable Version](https://img.shields.io/badge/stable-1.2.0-blue)](https://packagist.org/packages/hermes/dependencies)
-- Laravel Pint [![Latest Stable Version](https://img.shields.io/badge/stable-v1.24.0-blue)](https://packagist.org/packages/laravel/pint)
+Made with ❤️ for the PHP community
 
-#### Develop dependencies 🔧
-- Alpinejs [![Latest Stable Version](https://img.shields.io/badge/stable-3.14.9-blue)](https://www.npmjs.com/package/alpinejs)
-- Autoprefixer [![Latest Stable Version](https://img.shields.io/badge/stable-10.4.20-blue)](https://www.npmjs.com/package/autoprefixer)
-- Postcss [![Latest Stable Version](https://img.shields.io/badge/stable-8.4.49-blue)](https://www.npmjs.com/package/postcss)
-- Tailwindcss [![Latest Stable Version](https://img.shields.io/badge/stable-3.4.16-blue)](https://www.npmjs.com/package/tailwindcss)
-- Vite [![Latest Stable Version](https://img.shields.io/badge/stable-7.0-blue)](https://www.npmjs.com/package/vite)
-
-**Made with ❤️ for the PHP community**
+</div>
